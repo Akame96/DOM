@@ -3,11 +3,16 @@
 
 // - Creare una lista aggiungendo il task desiderato mediante il bottone `Aggiungi`.
 // - Creare un checkbox per ogni task aggiunto.
-const input = document.querySelector("ul");
+
+
 const addProduct = () => {
+  const input = document.getElementsByTagName("input")[0];
+  const inputValue = input.value;
   const list = document.createElement("li");
-  list.innerText = "studiare";
+  list.innerText = inputValue;
+  const inputFirst = document.createElement("input");
+  inputFirst.type = "checkbox";
+  list.appendChild(inputFirst);
+  const ul = document.getElementsByTagName("ul")[0];
   ul.appendChild(list);
-  const createCheckbox = document.createElement("checkbox")
-createCheckbox.innerText = list
 };

@@ -5,7 +5,7 @@ Recuperare il valore di ciascun campo di input e creare un oggetto
 Infine recuperare l'elemento forme aggiungere l'attributo 
 data-person contenente l'oggetto person in formato json. -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -34,13 +34,7 @@ data-person contenente l'oggetto person in formato json. -->
   const firstName = document.getElementById("firstName");
   const lastName = document.getElementById("lastName");
   const age = document.getElementById("age");
-  const labelF = document.getElementsByClassName("label")[0];
-  const labelL = document.getElementsByClassName("label")[1];
-  const labelA = document.getElementsByClassName("label")[2];
 
-  console.log(labelF.textContent, firstName.value);
-  console.log(labelL.textContent, lastName.value);
-  console.log(labelA.textContent, age.value);
 
   const person = {
     firstName: firstName.value,

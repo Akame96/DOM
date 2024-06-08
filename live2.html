@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fastbook Home Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="row space-btw align-center nav">
+        <div>
+            <ul class="row" id="nav-items">
+                <li class="nav-item">Home</li>
+                <li class="nav-item">Friends</li>
+                <li class="nav-item">Profile</li>
+            </ul>
+        </div>
+        <div>
+            <form action="">
+                <button type="submit" class="logout">Logout</button>
+            </form>
+        </div>
+    </nav>
+    <main>
+        <section id="posts" class="column align-center w-100 gap20"></section>
+    </main>
+    <footer></footer>
+    <script>
+        const posts = [
+            {
+                "id": "1",
+                "user": "john_doe",
+                "content": "Just finished my morning run! Feeling great! 🏃‍♂️ #fitness #morningrun",
+                "timestamp": "2024-06-03T08:30:00Z"
+            },
+            {
+                "id": "2",
+                "user": "jane_smith",
+                "content": "Had an amazing brunch with friends today. Check out this view! ☀️🥂 #brunch #weekendvibes",
+                "timestamp": "2024-06-03T10:45:00Z"
+            },
+            {
+                "id": "3",
+                "user": "travel_guru",
+                "content": "Exploring the beautiful streets of Paris. The architecture is stunning! 🇫🇷 #travel #Paris",
+                "timestamp": "2024-06-03T12:00:00Z"
+            },
+            {
+                "id": "4",
+                "user": "tech_enthusiast",
+                "content": "Just got my hands on the latest smartphone! The camera quality is out of this world. 📱✨ #tech #newgadget",
+                "timestamp": "2024-06-03T14:15:00Z"
+            },
+            {
+                "id": "5",
+                "user": "foodie",
+                "content": "Trying out this new sushi place in town. The sashimi is so fresh! 🍣 #foodie #sushi",
+                "timestamp": "2024-06-03T16:30:00Z"
+            },
+            {
+                "id": "6",
+                "user": "nature_lover",
+                "content": "Spent the day hiking in the mountains. Nature is so rejuvenating. 🌲🌄 #hiking #nature",
+                "timestamp": "2024-06-03T18:00:00Z"
+            },
+            {
+                "id": "7",
+                "user": "movie_buff",
+                "content": "Just watched the latest blockbuster movie. Highly recommend it! 🎬🍿 #movies #review",
+                "timestamp": "2024-06-03T20:30:00Z"
+            },
+            {
+                "id": "8",
+                "user": "artist",
+                "content": "Finished a new painting today. Feeling proud of how it turned out. 🎨 #art #painting",
+                "timestamp": "2024-06-03T22:00:00Z"
+            },
+            {
+                "id": "9",
+                "user": "fitness_freak",
+                "content": "Crushed my workout session at the gym today. No pain, no gain! 💪 #fitness #gym",
+                "timestamp": "2024-06-04T06:00:00Z"
+            },
+            {
+                "id": "10",
+                "user": "bookworm",
+                "content": "Just finished reading an amazing novel. Couldn't put it down! 📚 #books #reading",
+                "timestamp": "2024-06-04T08:45:00Z"
+            }
+        ]
+        posts.forEach(post => {
+        const newEl = document.createElement('div');
+        newEl.classList.add('column');
+        newEl.classList.add('post');
+        const postHeader = document.createElement('div');
+        postHeader.classList.add('row');
+        postHeader.classList.add('align-center');
+        const author = document.createElement('h4');
+        author.innerHTML = post.user;
+        const date = document.createElement('p');
+        date.classList = ['timestamp'];
+        date.innerHTML = new Date(post.timestamp).toISOString();
+        const content = document.createElement('p');
+        content.innerHTML = post.content;
+        postHeader.appendChild(author);
+        postHeader.appendChild(date);
+        newEl.appendChild(postHeader);
+        newEl.appendChild(content);
+        document.getElementById('posts').appendChild(newEl);
+      });
+    </script>
+</body>
+
+</html>
